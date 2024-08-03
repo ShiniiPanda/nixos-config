@@ -4,7 +4,8 @@
 
 
   imports = [
-    ../../modules/user/git.nix
+    ../../modules/user/git/git.nix
+    ../../modules/user/git/lazygit.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
