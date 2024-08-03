@@ -1,8 +1,13 @@
-{ config, lib, ...}:
+{ config, lib, inputs,  userSettings, ...}:
 
 {
- 
-  stylix.enable = true;
-  stylix.image = "\${HOME}/Pictures/Wallpapers/moonman.png";
 
+  imports = [ inputs.stylix.nixosModules.stylix ];
+  stylix.enable = true;
+  stylix.image = /home/${userSettings.profile}/Pictures/Wallpapers/moonman.png;
+  stylix.autoEnable = false;
+  stylix.targets = {
+    gnome.enable = lib.mkForce false;
+    kitty.enable = true;
+  };
 }
