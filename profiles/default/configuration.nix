@@ -11,7 +11,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/system/apps/steam.nix
-      ../../modules/system/style/stylix.nix
+      ../../modules/system/hardware/bluetooth.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -48,7 +48,14 @@
     users = {
       "panda" = import ./home.nix;
     };
+    backupFileExtension = "backup";
   };
+
+  # Stylix
+  stylix.enable = true;
+  stylix.image = /home/panda/Pictures/Wallpapers/moonman.png;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -76,7 +83,7 @@
   #services.displayManager.defaultSession = "plasma";
 
   # Configure keymap in X11
-   services.xserver.xkb.layout = "us,eg";
+  services.xserver.xkb.layout = "us,eg";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
@@ -118,7 +125,7 @@
      waybar # top bar
      mako # notification daemon
      libnotify # required by mako
-     swww # backgrounds
+     hyprpaper
      kitty # terminal for hyprland (default)
      rofi-wayland # app launcher for wayland
      vscode
