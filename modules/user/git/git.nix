@@ -2,6 +2,10 @@
 
 {
 
+  imports = [
+    ./lazygit.nix
+  ];
+
   programs.git = {
     enable = true;
     userName = "Shinii";

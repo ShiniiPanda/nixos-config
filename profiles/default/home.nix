@@ -5,7 +5,6 @@
 
   imports = [
     ../../modules/user/git/git.nix
-    ../../modules/user/git/lazygit.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -79,4 +78,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Enables Packages
+  lazygit.enable = true;
 }
