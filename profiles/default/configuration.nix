@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, userSettings, ... }:
 
 {
   imports =
@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/system/apps/steam.nix
+      ../../modules/system/style/stylix.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
