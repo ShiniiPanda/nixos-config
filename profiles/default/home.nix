@@ -5,6 +5,7 @@
 
   imports = [
     ../../modules/user/git/git.nix
+    ../../modules/user/apps/proton.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

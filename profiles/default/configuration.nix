@@ -10,6 +10,7 @@
       #<nixos-hardware/asus/rog-strix/g713ie>
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+      ../../modules/system/apps/steam.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -148,10 +149,6 @@
     # ];
    };
    programs.xfconf.enable = true;
-
-   programs.steam.enable  = true;
-   programs.steam.gamescopeSession.enable = true;
-   programs.gamemode.enable = true;
 
    environment.sessionVariables = {
      # Enable if cursor is invisible
