@@ -5,15 +5,15 @@ in
 {
 
   options = {
-    localModules.lunarvim.enable = mkOption {
+    localModules.lunarvim.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;
       example = false;
-      description = "Enable LunarVim"
+      description = "Enable LunarVim";
     };
   };
 
-  config = mkIf cfg {
+  config = lib.mkIf cfg {
     home.packages = with pkgs; [
       lunarvim
     ];

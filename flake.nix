@@ -16,6 +16,7 @@
   let
     userSettings = {
       profile = "panda";
+      theme = "default";
     };
   in
    {
