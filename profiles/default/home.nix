@@ -7,6 +7,7 @@
     ../../modules/user/git/git.nix
     ../../modules/user/apps/proton.nix
     ../../modules/user/hardware/bluetooth.nix
+    ../../modules/user/apps/lunarvim.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
