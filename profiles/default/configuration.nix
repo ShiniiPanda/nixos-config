@@ -12,6 +12,7 @@
       inputs.home-manager.nixosModules.default
       ../../modules/system/apps/steam.nix
       ../../modules/system/hardware/bluetooth.nix
+      ../../modules/system/style/stylix.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -38,6 +39,7 @@
 
   # Set your time zone.
    time.timeZone = "Africa/Cairo";
+   time.hardwareClockInLocalTime = true;
 
   # ALlow unfree packages
    nixpkgs.config.allowUnfree = true;
@@ -52,9 +54,9 @@
   };
 
   # Stylix
-  stylix.enable = true;
-  stylix.image = /home/panda/Pictures/Wallpapers/moonman.png;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+ # stylix.enable = true;
+ # stylix.image = /home/panda/Pictures/Wallpapers/moonman.png;
+ # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/darkviolet.yaml";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -125,7 +127,6 @@
      mako # notification daemon
      libnotify # required by mako
      hyprpaper
-     kitty # terminal for hyprland (default)
      rofi-wayland # app launcher for wayland
      vscode
      networkmanagerapplet
