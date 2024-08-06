@@ -17,6 +17,7 @@
     userSettings = {
       profile = "panda";
       theme = "default";
+      wm = "hyprland";
     };
   in
    {

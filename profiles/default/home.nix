@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
 
@@ -9,6 +9,8 @@
     ../../modules/user/hardware/bluetooth.nix
     ../../modules/user/apps/lunarvim.nix
     ../../modules/user/apps/utilities.nix
+    ../../modules/user/terminal/kitty.nix
+    ../../modules/user/display/${userSettings.wm}.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
