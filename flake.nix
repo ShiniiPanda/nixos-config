@@ -17,7 +17,12 @@
     userSettings = {
       profile = "panda";
       theme = "default";
+
       wm = "hyprland";
+      launcher = "rofi";
+      browser = "brave";
+      fileManager = "thunar";
+      notification = "mako";
     };
   in
    {
