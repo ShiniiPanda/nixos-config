@@ -11,6 +11,7 @@
     ../../modules/user/apps/utilities.nix
     ../../modules/user/terminal/kitty.nix
     ../../modules/user/display/hyprland.nix
+    ../../modules/user/apps/jetbrains.nix
     ../../modules/user/apps/${userSettings.notification}.nix
     ../../modules/user/apps/${userSettings.launcher}.nix
   ];
