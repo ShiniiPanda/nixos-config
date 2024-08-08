@@ -14,6 +14,7 @@
       ../../modules/system/hardware/bluetooth.nix
       ../../modules/system/style/stylix.nix
       ../../modules/system/hardware/asus-utils.nix
+      ../../modules/system/hardware/docker.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -128,7 +129,6 @@
      librewolf
      vesktop
      waybar # top bar
-     rofi-wayland # app launcher for wayland
      vscode
      networkmanagerapplet
      mangohud
@@ -202,7 +202,7 @@
   fonts = {
     packages = with pkgs; [
       (nerdfonts.override {
-        fonts = ["Meslo", "FiraMono"];
+        fonts = [ "Meslo" "FiraMono" ];
       })
     ];
   };
