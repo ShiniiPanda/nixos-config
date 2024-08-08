@@ -15,6 +15,7 @@
       ../../modules/system/style/stylix.nix
       ../../modules/system/hardware/asus-utils.nix
       ../../modules/system/hardware/docker.nix
+      ../../modules/system/shell/${userSettings.shell}.nix
     ];
 
   # Use the systemd-boot EFI boot loader.

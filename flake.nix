@@ -17,6 +17,7 @@
     userSettings = {
       profile = "panda";
       theme = "default";
+      shell = "zsh";
 
       wm = "hyprland";
       launcher = "rofi";
