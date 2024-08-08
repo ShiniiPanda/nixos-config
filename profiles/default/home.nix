@@ -12,6 +12,7 @@
     ../../modules/user/terminal/kitty.nix
     ../../modules/user/display/hyprland.nix
     ../../modules/user/apps/${userSettings.notification}.nix
+    ../../modules/user/apps/${userSettings.launcher}.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
