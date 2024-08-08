@@ -13,6 +13,7 @@
       ../../modules/system/apps/steam.nix
       ../../modules/system/hardware/bluetooth.nix
       ../../modules/system/style/stylix.nix
+      ../../modules/system/hardware/asus-utils.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
