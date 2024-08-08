@@ -198,6 +198,14 @@
    services.gvfs.enable = true; # Enabling Mount, Trash and some other things.
    services.tumbler.enable = true; # Thumbnail support for images.
 
+
+  fonts = {
+    packages = with pkgs; [
+      (nerdfonts.override {
+        fonts = ["Meslo", "FiraMono"];
+      })
+    ];
+  };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
