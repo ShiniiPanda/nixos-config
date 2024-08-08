@@ -46,7 +46,10 @@
 
   # Enable Home Manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { 
+      inherit inputs;
+      inherit userSettings;
+    };
     users = {
       "panda" = import ./home.nix;
     };
@@ -124,9 +127,6 @@
      librewolf
      vesktop
      waybar # top bar
-     mako # notification daemon
-     libnotify # required by mako
-     hyprpaper
      rofi-wayland # app launcher for wayland
      vscode
      networkmanagerapplet
@@ -136,6 +136,7 @@
      lf
      gh
      neofetch
+     wl-clipboard
      spotify
      mpv
      brave

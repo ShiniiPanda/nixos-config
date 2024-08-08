@@ -10,7 +10,8 @@
     ../../modules/user/apps/lunarvim.nix
     ../../modules/user/apps/utilities.nix
     ../../modules/user/terminal/kitty.nix
-    ../../modules/user/display/${userSettings.wm}.nix
+    ../../modules/user/display/hyprland.nix
+    ../../modules/user/apps/${userSettings.notification}.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
