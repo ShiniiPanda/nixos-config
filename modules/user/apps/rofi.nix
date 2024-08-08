@@ -2,7 +2,7 @@
 let
   rofi-wayland = pkgs.rofi-wayland;
   inherit (config.lib.formats.rasi) mkLiteral;
-  inherit (config.lib.stylix.colors.withHashTag) base00 base05;
+  inherit (config.lib.stylix.colors.withHashtag) base00 base05;
 in
 {
 
