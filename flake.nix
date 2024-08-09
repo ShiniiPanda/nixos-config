@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     stylix.url = "github:danth/stylix";
-
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1"; 
      home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
