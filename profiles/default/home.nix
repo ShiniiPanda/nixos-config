@@ -13,6 +13,7 @@
     ../../modules/user/display/hyprland.nix
     ../../modules/user/apps/jetbrains.nix
     ../../modules/user/apps/android-studio.nix
+    ../../modules/user/apps/krita.nix
     ../../modules/user/shell/mongosh.nix
     ../../modules/user/shell/${userSettings.shell}.nix
     ../../modules/user/apps/${userSettings.notification}.nix
