@@ -49,6 +49,7 @@
 
   # Enable Home Manager
   home-manager = {
+    useGlobalPkgs = true;
     extraSpecialArgs = { 
       inherit inputs;
       inherit userSettings;
