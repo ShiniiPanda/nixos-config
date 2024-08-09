@@ -1,11 +1,18 @@
-{ userSettings, pkgs, ...}:
+{ userSettings, pkgs, lib, ...}:
 let
-  themePath = ./themes/${userSettings.theme}.nix;
-  themeExists = builtins.path themePath;
+  inherit (pkgs) fetchurl;
+  theme = ../../../themes/theme.yaml;
+  polarity = lib.removeSuffix "\n" (builtins.readFile ../../../themes/${userSettings.theme}/polarty.txt);
+  background = builtins.readFile ../../../themes/${userSettings.theme}/background.txt;
+  background256 = builtins.readFile ../../../themes/${userSettings}/backgroundsha256.txt;
 in
 {
-  imports = [] ++ (if themeExists then [themePath] else [./themes/default.nix]);
+  # Credit goes to librephoenix aka Emmet for helping me tons with organizing my styles!
   stylix.enable = true;
-  stylix.image = /home/${userSettings.profile}/Pictures/Wallpapers/moonman.png;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+  stylix.image = fetchurl {
+    url = background;
+    sha256 = background256; 
+  }; 
+  stylix.base16Scheme = theme;
+  stylix.polarity = polarity;
 }
