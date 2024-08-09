@@ -1,10 +1,11 @@
-{  config, lib, pkgs, userSettings, ... }:
+{  config, lib, pkgs, userSettings, inputs, ... }:
 let
   super = "SUPER"; 
   terminal = "kitty";
   browser = userSettings.browser;
   launcher = userSettings.launcher;
   fileManager = userSettings.fileManager;
+  hyprland-plugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
 
@@ -22,6 +23,12 @@ in
     enable = true;
     systemd.enable = true;
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+
+    plugins = [
+      hyprland-plugins.hyprexpo
+    ];
+
     settings = {
 
       env = [
@@ -102,7 +109,7 @@ in
         kb_layout = "us,eg";
         kb_variant = "";
         kb_model = "";
-        kb_options = "";
+        kb_options = "grp:alt_shift_toggle";
         kb_rules = "";
         follow_mouse = 1;
         sensitivity = 0; # From -1.0 to 1.0.
@@ -133,7 +140,10 @@ in
         "${super}, J, togglesplit," 
         "${super}, S, exec, rofi -show drun -show-icons"
         "${super}, B, exec, ${browser}"
-        
+
+        # Hypr Expo
+        "${super}, tab, hyprexpo:expo, toggle"
+
         # Move focus with mainMod + arrow keys
         "${super}, left, movefocus, l"
         "${super}, right, movefocus, r"
