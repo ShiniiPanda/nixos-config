@@ -18,6 +18,7 @@
     ../../modules/user/shell/${userSettings.shell}.nix
     ../../modules/user/apps/${userSettings.notification}.nix
     ../../modules/user/apps/${userSettings.launcher}.nix
+    ../../modules/user/apps/zathura.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

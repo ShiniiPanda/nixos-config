@@ -141,7 +141,6 @@
      mangohud
      grim # Taking screenshots
      slurp # Screenshots area selection
-     lf
      gh
      neofetch
      wl-clipboard
