@@ -14,6 +14,8 @@
     ../../modules/user/apps/jetbrains.nix
     ../../modules/user/apps/android-studio.nix
     ../../modules/user/apps/krita.nix
+    ../../modules/user/apps/obsidian.nix
+    ../../modules/user/apps/thunderbird.nix
     ../../modules/user/shell/mongosh.nix
     ../../modules/user/shell/${userSettings.shell}.nix
     ../../modules/user/apps/${userSettings.notification}.nix
