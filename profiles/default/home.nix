@@ -15,12 +15,12 @@
     ../../modules/user/apps/android-studio.nix
     ../../modules/user/apps/krita.nix
     ../../modules/user/apps/obsidian.nix
-    ../../modules/user/apps/thunderbird.nix
     ../../modules/user/shell/mongosh.nix
     ../../modules/user/shell/${userSettings.shell}.nix
     ../../modules/user/apps/${userSettings.notification}.nix
     ../../modules/user/apps/${userSettings.launcher}.nix
     ../../modules/user/apps/zathura.nix
+    ../../modules/user/languages/java.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
