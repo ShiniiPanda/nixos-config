@@ -14,6 +14,7 @@
     ../../modules/user/apps/jetbrains.nix
     ../../modules/user/apps/android-studio.nix
     ../../modules/user/apps/krita.nix
+    ../../modules/user/apps/obs.nix
     ../../modules/user/apps/obsidian.nix
     ../../modules/user/apps/pavucontrol.nix
     ../../modules/user/shell/mongosh.nix
