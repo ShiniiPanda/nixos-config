@@ -6,6 +6,7 @@ let
   launcher = userSettings.launcher;
   fileManager = userSettings.fileManager;
   hyprland-plugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+  screenshotsPath = /home/${userSettings.profile}/Pictures/Screenshots;
 in
 {
 
@@ -142,7 +143,7 @@ in
         "${super}, V, togglefloating,"
         "${super}, P, pseudo,"
         "${super}, J, togglesplit," 
-        "${super}, S, exec, rofi -show drun -show-icons"
+        "${super}, S, exec, killall rofi || rofi -show drun -show-icons"
         "${super}, B, exec, ${browser}"
 
         # Hypr Expo
@@ -177,10 +178,14 @@ in
         "${super}_SHIFT, 8, movetoworkspace, 8"
         "${super}_SHIFT, 9, movetoworkspace, 9"
         "${super}_SHIFT, 0, movetoworkspace, 10"
-        
+        "${super}_SHIFT, A, exec, pavucontrol"
+        "${super}_SHIFT, M, exec, spotify"
+        "${super}_SHIFT, D, exec, vesktop"
+        "${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
+
         # Example special workspace (scratchpad)
-        "${super}, S, togglespecialworkspace, magic"
-        "${super}_SHIFT, S, movetoworkspace, special:magic"
+        "${super}, F, togglespecialworkspace, magic"
+        "${super}_SHIFT, F, movetoworkspace, special:magic"
         
         # Scroll through existing workspaces with mainMod + scroll
         "${super}, mouse_down, workspace, e+1"
@@ -198,6 +203,7 @@ in
         "nm-applet"
         "blueman-applet"
         "waybar"
+        "flameshot"
       ];  
     };
 

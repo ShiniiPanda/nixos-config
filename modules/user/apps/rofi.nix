@@ -2,7 +2,7 @@
 let
   rofi-wayland = pkgs.rofi-wayland;
   inherit (config.lib.formats.rasi) mkLiteral;
-  inherit (config.lib.stylix.colors.withHashtag) base00 base05;
+  inherit (config.lib.stylix.colors.withHashtag) base00 base05 base01;
 in
 {
 
@@ -85,6 +85,10 @@ in
 
       "element alternative active" = {
         text-color = mkLiteral "${base00}40";
+      };
+
+      "element selected normal, element selected active" = {
+        background-color = mkLiteral "${base01}40";
       };
 
       element-icon = {

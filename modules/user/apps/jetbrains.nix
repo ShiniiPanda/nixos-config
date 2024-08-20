@@ -1,14 +1,11 @@
-{ config , ... }:
-let
-  jetbrains = config.localModules.jetbrains;
-in
+{ ... }:
 {
 
   imports = [
     ./idea.nix
   ];
 
-  ${jetbrains} = {
+  localModules.jetbrains = {
     idea-community.enable = true;
   };
 }
