@@ -4,10 +4,10 @@ let
 in
 {
 
-  imports = [ ./flameshot.nix ./btop.nix ./lf.nix ./jq.nix ./fastfetch.nix ];
+  imports = [ ./flameshot.nix ./btop.nix ./lf.nix ./jq.nix ./fastfetch.nix ./grimblast.nix];
 
   # All utilites are enabled by default. To selectively disable some just do modules.[name].enable = false;
-  config.localModules.flameshot.enable = lib.mkDefault true;
+  config.localModules.flameshot.enable = lib.mkDefault false;
   config.localModules.btop.enable = lib.mkDefault true;
   config.localModules.lf.enable = lib.mkDefault true;
   config.localModules.jq.enable = lib.mkDefault true;

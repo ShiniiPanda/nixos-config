@@ -181,7 +181,7 @@ in
         "${super}_SHIFT, A, exec, pavucontrol"
         "${super}_SHIFT, M, exec, spotify"
         "${super}_SHIFT, D, exec, vesktop"
-        "${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
+        #"${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
 
         # Example special workspace (scratchpad)
         "${super}, F, togglespecialworkspace, magic"
@@ -203,7 +203,7 @@ in
         "nm-applet"
         "blueman-applet"
         "waybar"
-        "flameshot"
+        #"flameshot"
       ];  
     };
 
