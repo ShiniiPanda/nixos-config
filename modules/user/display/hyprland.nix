@@ -12,6 +12,7 @@ in
 
   imports = [
     ./waybar.nix
+    ../apps/grimblast.nix
   ];
 
   home.packages = with pkgs; [
@@ -59,8 +60,8 @@ in
 
       monitor = [
         ",preferred,auto,1"
-        "eDP-1,1920x1080@144,0x0,1,bitdepth,10"
-        "HDMI-A-1,1920x1080@60,1920x250,1,bitdepth,10"
+        "eDP-1,1920x1080@144,0x0,1,bitdepth,8"
+        "HDMI-A-1,1920x1080@60,1920x250,1,bitdepth,8"
       ];
 
       decoration = {
@@ -181,6 +182,7 @@ in
         "${super}_SHIFT, A, exec, pavucontrol"
         "${super}_SHIFT, M, exec, spotify"
         "${super}_SHIFT, D, exec, vesktop"
+        "${super}_SHIFT, S, exec, grimblast --freeze copy area"
         #"${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
 
         # Example special workspace (scratchpad)
