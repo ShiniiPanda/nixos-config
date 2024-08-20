@@ -20,7 +20,7 @@
   let
     userSettings = {
       profile = "panda";
-      theme = "default";
+      theme = "forest";
       shell = "zsh";
 
       wm = "hyprland";
