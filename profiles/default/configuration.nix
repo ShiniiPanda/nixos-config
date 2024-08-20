@@ -150,6 +150,7 @@
      brave
      nh
      xwaylandvideobridge
+     killall
    ];
 
    programs.hyprland = {
