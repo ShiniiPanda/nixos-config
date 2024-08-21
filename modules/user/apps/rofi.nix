@@ -6,6 +6,7 @@ let
 in
 {
 
+  imports = [ ./rofimoji.nix ];
   programs.rofi = {
     enable = true;
     cycle = false;
