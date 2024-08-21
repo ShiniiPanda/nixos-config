@@ -6,7 +6,6 @@ let
   launcher = userSettings.launcher;
   fileManager = userSettings.fileManager;
   hyprland-plugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
-  screenshotsPath = /home/${userSettings.profile}/Pictures/Screenshots;
 in
 {
 
@@ -182,7 +181,7 @@ in
         "${super}_SHIFT, A, exec, pavucontrol"
         "${super}_SHIFT, M, exec, spotify"
         "${super}_SHIFT, D, exec, vesktop"
-        "${super}_SHIFT, S, exec, grimblast --freeze copy area"
+        "${super}_SHIFT, S, exec, grimblast --freeze --notify copy area"
         #"${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
 
         # Example special workspace (scratchpad)
