@@ -16,6 +16,7 @@
       ../../modules/system/style/stylix.nix
       ../../modules/system/hardware/asus-utils.nix
       ../../modules/system/hardware/docker.nix
+      ../../modules/system/hardware/tablet.nix
       ../../modules/system/shell/${userSettings.shell}.nix
     ];
 
@@ -39,11 +40,11 @@
 
   
   # Enable flakes and nix shell commands
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
+   nix.settings = {
+     experimental-features = [ "nix-command" "flakes" ];
+     substituters = ["https://hyprland.cachix.org"];
+     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+   };
 
   # Set your time zone.
    time.timeZone = "Africa/Cairo";
