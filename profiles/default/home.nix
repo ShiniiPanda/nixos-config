@@ -92,7 +92,7 @@
   #  /etc/profiles/per-user/panda/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "lunarvim";
+    EDITOR = "lvim";
   };
 
   # Let Home Manager install and manage itself.
