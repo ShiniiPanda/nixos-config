@@ -66,11 +66,6 @@
     backupFileExtension = "backup";
   };
 
-  # Stylix
- # stylix.enable = true;
- # stylix.image = /home/panda/Pictures/Wallpapers/moonman.png;
- # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/darkviolet.yaml";
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -132,13 +127,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
    environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     vim
      wget
      git
      librewolf
      vesktop
      waybar # top bar
-     vscode
      networkmanagerapplet
      mangohud
      grim # Taking screenshots

@@ -16,6 +16,9 @@
       repos = "cd ~/Documents/Programming/Repos/";
       learning = "cd ~/Documents/Programming/Learning/";
       lf = "lfcd";
+      modules = "cd /etc/nixos/modules";
+      lgit = "lazygit";
+      ldock = "lazydocker";
     };
 
     initExtra = ''
