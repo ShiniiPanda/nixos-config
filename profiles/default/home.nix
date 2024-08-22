@@ -22,7 +22,7 @@
     ../../modules/user/apps/${userSettings.notification}.nix
     ../../modules/user/apps/${userSettings.launcher}.nix
     ../../modules/user/apps/zathura.nix
-    ../../modules/user/languages/java.nix
+    ../../modules/user/languages/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
