@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+let
+  inherit (lib) mkForce;
+in
 {
   programs.vscode = {
     enable = true;
@@ -7,6 +10,8 @@
     extensions = with pkgs.vscode-extensions; [ 
       ms-dotnettools.csharp
       ms-dotnettools.csdevkit
+      ms-dotnettools.vscode-dotnet-runtime
+      ms-dotnettools.vscodeintellicode-csharp
       ziglang.vscode-zig
       bradlc.vscode-tailwindcss
       ecmel.vscode-html-css
@@ -15,7 +20,8 @@
       vscodevim.vim
     ];
     userSettings = {
-      "editor.fontFamily" = "MesloLGM Nerd Font Mono";
+      "editor.fontFamily" = mkForce "MesloLGM Nerd Font Mono";
+      "terminal.integrated.fontFamily" = mkForce "MesloLGM Nerd Font Mono";
       "terminal.integrated.fontSize" = 16;
       "editor.colorDecoratorsActivatedOn" = "click";
       "editor.fontSize" = 18;
