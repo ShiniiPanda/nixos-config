@@ -22,6 +22,7 @@
       profile = "panda";
       theme = "forest";
       shell = "zsh";
+      terminal = "kitty";
 
       wm = "hyprland";
       launcher = "rofi";
