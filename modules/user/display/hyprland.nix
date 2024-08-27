@@ -182,7 +182,8 @@ in
         "${super}_SHIFT, M, exec, spotify"
         "${super}_SHIFT, D, exec, vesktop"
         "${super}_SHIFT, S, exec, grimblast --freeze --notify copy area"
-        "${super}_SHIFT, ;, exec, rofi -modi emoji:rofimoji -show emoji"
+        "${super}_SHIFT, semicolon, exec, killall rofi || rofi -modi emoji:rofimoji -show emoji"
+        "${super}_SHIFT, E, exec, ${userSettings.terminal} lf"
         #"${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
 
         # Example special workspace (scratchpad)
