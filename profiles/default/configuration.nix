@@ -89,6 +89,7 @@
   # Enable Plasma6 Desktop Environment
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.theme = "tokyo-night-sddm";
   #services.desktopManager.plasma6.enable = true;
   #services.displayManager.defaultSession = "plasma";
 
