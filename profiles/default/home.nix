@@ -93,7 +93,9 @@
   #  /etc/profiles/per-user/panda/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    ANDROID_HOME="$HOME/Android/Sdk";
     EDITOR = "lvim";
+    THEME = "${userSettings.theme}";
   };
 
   # Let Home Manager install and manage itself.
