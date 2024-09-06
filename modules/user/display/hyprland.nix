@@ -183,7 +183,8 @@ in
         "${super}_SHIFT, D, exec, vesktop"
         "${super}_SHIFT, S, exec, grimblast --freeze --notify copy area"
         "${super}_SHIFT, semicolon, exec, killall rofi || rofi -modi emoji:rofimoji -show emoji"
-        "${super}_SHIFT, E, exec, ${userSettings.terminal} lf"
+        "${super}_SHIFT, E, exec, ${userSettings.terminal} -e zsh -c 'source ~/.zshrc; lfcd; exec zsh'"
+        "${super}_SHIFT, T, exec, kitty /etc/nixos/themes/change.sh"
         #"${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
 
         # Example special workspace (scratchpad)
