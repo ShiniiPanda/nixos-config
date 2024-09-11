@@ -16,6 +16,7 @@
     ../../modules/user/apps/krita.nix
     ../../modules/user/apps/vscode.nix
     ../../modules/user/apps/obs.nix
+    ../../modules/user/apps/blender.nix
     ../../modules/user/apps/obsidian.nix
     ../../modules/user/apps/pavucontrol.nix
     ../../modules/user/shell/mongosh.nix
