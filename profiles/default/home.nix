@@ -18,6 +18,7 @@
     ../../modules/user/apps/bruno.nix
     ../../modules/user/apps/obs.nix
     ../../modules/user/apps/blender.nix
+    ../../modules/user/apps/prism-launcher.nix
     ../../modules/user/apps/obsidian.nix
     ../../modules/user/apps/pavucontrol.nix
     ../../modules/user/shell/mongosh.nix
