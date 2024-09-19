@@ -11,6 +11,7 @@
 
     shellAliases = {
       slvim = "sudo -E lvim";
+      slgit = "sudo -E lazygit";
       nixos = "cd /etc/nixos";
       rebuild = "sudo nixos-rebuild switch --flake '/etc/nixos#default'";
       repos = "cd ~/Documents/Programming/Repos/";
