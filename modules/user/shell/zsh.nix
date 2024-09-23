@@ -20,6 +20,8 @@
       modules = "cd /etc/nixos/modules";
       lgit = "lazygit";
       ldock = "lazydocker";
+      develop = "nix develop -c zsh";
+      cdir = "cd $(wl-paste)";
     };
 
     initExtra = ''
