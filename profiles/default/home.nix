@@ -22,6 +22,7 @@
     ../../modules/user/apps/obsidian.nix
     ../../modules/user/apps/pavucontrol.nix
     ../../modules/user/shell/mongosh.nix
+    ../../modules/user/shell/direnv.nix
     ../../modules/user/shell/${userSettings.shell}.nix
     ../../modules/user/apps/${userSettings.notification}.nix
     ../../modules/user/apps/${userSettings.launcher}.nix
