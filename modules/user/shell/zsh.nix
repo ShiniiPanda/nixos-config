@@ -22,6 +22,7 @@
       ldock = "lazydocker";
       develop = "nix develop -c zsh";
       cdir = "cd $(wl-paste)";
+      cpdir = "pwd | wl-copy";
     };
 
     initExtra = ''
