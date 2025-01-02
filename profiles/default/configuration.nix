@@ -141,12 +141,15 @@
      gh
      neofetch
      wl-clipboard
+     xorg.libXcursor
      spotify
      mpv
+     cmake
      brave
      nh
      xwaylandvideobridge
      killall
+     inputs.ghostty.packages.x86_64-linux.default
      ( libsForQt5.callPackage ../../modules/system/style/tokyo-night-sddm-theme.nix { } )
    ];
 
