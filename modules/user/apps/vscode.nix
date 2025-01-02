@@ -24,7 +24,7 @@ in
       "terminal.integrated.fontFamily" = mkForce "MesloLGM Nerd Font Mono";
       "terminal.integrated.fontSize" = 16;
       "editor.colorDecoratorsActivatedOn" = "click";
-      "editor.fontSize" = 18;
+      "editor.fontSize" = mkForce 18;
       "window.newWindowDimensions" = "fullscreen";
       "vim.smartRelativeLine" = true;
     };
