@@ -149,7 +149,6 @@
      nh
      xwaylandvideobridge
      killall
-     inputs.ghostty.packages.x86_64-linux.default
      ( libsForQt5.callPackage ../../modules/system/style/tokyo-night-sddm-theme.nix { } )
    ];
 
@@ -210,9 +209,11 @@
 
   fonts = {
     packages = with pkgs; [
-      (nerdfonts.override {
-        fonts = [ "Meslo" "FiraMono" ];
-      })
+      # (nerdfonts.override {
+      #   fonts = [ "Meslo" "FiraMono" ];
+      # })
+      nerd-fonts.meslo-lg
+      nerd-fonts.fira-mono
     ];
   };
   # Open ports in the firewall.
