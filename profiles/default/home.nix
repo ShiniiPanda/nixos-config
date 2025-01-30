@@ -101,7 +101,7 @@
   #
   home.sessionVariables = {
     ANDROID_HOME="$HOME/Android/Sdk";
-    EDITOR = "lvim";
+    EDITOR = "nvim";
     THEME = "${userSettings.theme}";
   };
 
