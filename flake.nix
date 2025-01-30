@@ -23,7 +23,7 @@
   let
     userSettings = {
       profile = "panda";
-      theme = "forest";
+      theme = "default";
       shell = "zsh";
       terminal = "kitty";
 
