@@ -7,9 +7,12 @@
     ../../modules/user/git/git.nix
     ../../modules/user/apps/proton.nix
     ../../modules/user/hardware/bluetooth.nix
-    ../../modules/user/apps/lunarvim.nix
+   # ../../modules/user/apps/lunarvim.nix
+    ../../modules/user/apps/nvim.nix
     ../../modules/user/apps/utilities.nix
+    ../../modules/user/apps/atlauncher.nix
     ../../modules/user/terminal/kitty.nix
+    ../../modules/user/terminal/ghostty.nix
     ../../modules/user/display/hyprland.nix
     ../../modules/user/apps/jetbrains.nix
     ../../modules/user/apps/android-studio.nix
@@ -18,7 +21,6 @@
     ../../modules/user/apps/bruno.nix
     ../../modules/user/apps/obs.nix
     ../../modules/user/apps/blender.nix
-    ../../modules/user/apps/prism-launcher.nix
     ../../modules/user/apps/r2modman.nix
     ../../modules/user/apps/obsidian.nix
     ../../modules/user/apps/pavucontrol.nix
@@ -105,6 +107,9 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Stylix targets
+  stylix.targets.neovim.enable = false;
 
   # Enables Packages
   lazygit.enable = true;

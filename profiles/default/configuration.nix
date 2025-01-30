@@ -139,7 +139,11 @@
      grim # Taking screenshots
      slurp # Screenshots area selection
      gh
+     gcc
+     unzip
+     ripgrep
      neofetch
+     gnumake
      wl-clipboard
      xorg.libXcursor
      spotify
