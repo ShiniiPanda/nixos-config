@@ -9,6 +9,7 @@
     ../../modules/user/hardware/bluetooth.nix
    # ../../modules/user/apps/lunarvim.nix
     ../../modules/user/apps/nvim.nix
+    ../../modules/user/apps/bitwarden.nix
     ../../modules/user/apps/utilities.nix
     ../../modules/user/apps/atlauncher.nix
     ../../modules/user/terminal/kitty.nix
