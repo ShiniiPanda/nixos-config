@@ -7,5 +7,6 @@
 
   localModules.jetbrains = {
     idea-community.enable = true;
+    rider.enable = true;
   };
 }
