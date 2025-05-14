@@ -151,7 +151,7 @@
      cmake
      brave
      nh
-     xwaylandvideobridge
+     kdePackages.xwaylandvideobridge
      killall
      ( libsForQt5.callPackage ../../modules/system/style/tokyo-night-sddm-theme.nix { } )
    ];

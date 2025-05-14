@@ -1,7 +1,7 @@
 {  config, lib, pkgs, userSettings, inputs, ... }:
 let
   super = "SUPER"; 
-  terminal = "kitty";
+  terminal = "ghostty";
   browser = userSettings.browser;
   launcher = userSettings.launcher;
   fileManager = userSettings.fileManager;
@@ -69,10 +69,6 @@ in
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-
         # Hyprland wiki blur
         blur = {
           enabled = true;
@@ -107,7 +103,7 @@ in
       # Hyprland wiki misc
       misc = {
         force_default_wallpaper = -1;
-        disable_hyprland_logo = false;
+        disable_hyprland_logo = lib.mkForce false;
       };
 
       input = {
@@ -183,7 +179,7 @@ in
         "${super}_SHIFT, D, exec, vesktop"
         "${super}_SHIFT, S, exec, grimblast --freeze --notify copy area"
         "${super}_SHIFT, semicolon, exec, killall rofi || rofi -modi emoji:rofimoji -show emoji"
-        "${super}_SHIFT, E, exec, ${userSettings.terminal} -e zsh -c 'source ~/.zshrc; lfcd; exec zsh'"
+        "${super}_SHIFT, E, exec, kitty -e zsh -c 'source ~/.zshrc; lfcd; exec zsh'"
         "${super}_SHIFT, T, exec, kitty /etc/nixos/themes/change.sh"
         #"${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
 

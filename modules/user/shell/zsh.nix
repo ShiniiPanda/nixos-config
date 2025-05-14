@@ -10,7 +10,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      slvim = "sudo -E lvim";
+      snvim = "sudo -E nvim";
       slgit = "sudo -E lazygit";
       nixos = "cd /etc/nixos";
       rebuild = "sudo nixos-rebuild switch --flake '/etc/nixos#default'";
@@ -25,7 +25,7 @@
       cpdir = "pwd | wl-copy";
     };
 
-    initExtra = ''
+    initContent = ''
       lfcd () {
       # `command` is needed in case `lfcd` is aliased to `lf`
         cd "$(command lf -print-last-dir "$@")"
