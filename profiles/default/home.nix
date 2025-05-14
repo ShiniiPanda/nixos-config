@@ -20,6 +20,7 @@
     ../../modules/user/apps/krita.nix
     ../../modules/user/apps/vscode.nix
     ../../modules/user/apps/zoom.nix
+    ../../modules/user/apps/reaper.nix
     ../../modules/user/apps/bruno.nix
     ../../modules/user/apps/obs.nix
     ../../modules/user/apps/blender.nix
