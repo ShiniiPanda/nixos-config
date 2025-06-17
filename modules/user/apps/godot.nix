@@ -1,4 +1,4 @@
 { pkgs, ... }:
 {
-  home.packges = with pkgs; [ godot ];
+  home.packages = with pkgs; [ godot ];
 }
