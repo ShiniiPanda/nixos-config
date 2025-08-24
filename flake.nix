@@ -13,17 +13,18 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
      home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";
      };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, stylix, ... }@inputs: 
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, stylix, spicetify-nix, ... }@inputs: 
   let
     userSettings = {
       profile = "panda";
-      theme = "forest";
+      theme = "default";
       shell = "zsh";
       terminal = "kitty";
 
@@ -45,6 +46,7 @@
         nixos-hardware.nixosModules.asus-rog-strix-g713ie
         home-manager.nixosModules.default
         stylix.nixosModules.stylix
+        spicetify-nix.nixosModules.spicetify
       ];
     };
   };

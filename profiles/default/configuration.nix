@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/system/apps/steam.nix
+      ../../modules/system/apps/spicetify.nix
       ../../modules/system/apps/droidcam.nix
       ../../modules/system/hardware/bluetooth.nix
       ../../modules/system/style/stylix.nix
@@ -146,7 +147,6 @@
      gnumake
      wl-clipboard
      xorg.libXcursor
-     spotify
      mpv
      cmake
      brave
