@@ -29,6 +29,7 @@
     ../../modules/user/apps/r2modman.nix
     ../../modules/user/apps/obsidian.nix
     ../../modules/user/apps/pavucontrol.nix
+    ../../modules/user/apps/vesktop/nix
     ../../modules/user/shell/mongosh.nix
     ../../modules/user/shell/direnv.nix
     ../../modules/user/shell/${userSettings.shell}.nix
