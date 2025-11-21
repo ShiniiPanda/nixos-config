@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, lib, pkgs, inputs, userSettings, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
@@ -45,6 +45,17 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+  };
+
+  # Enable Home Manager
+  home-manager = {
+    useGlobalPkgs = true;
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit userSettings;
+    };
+    users = { "shinii" = import ./home.nix; };
+    backupFileExtension = "backup";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
