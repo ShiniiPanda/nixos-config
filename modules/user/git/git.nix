@@ -1,10 +1,8 @@
-{ config, lib, ...}:
+{ config, lib, ... }:
 
 {
 
-  imports = [
-    ./lazygit.nix
-  ];
+  imports = [ ./lazygit.nix ];
 
   programs.git = {
     enable = true;
@@ -19,4 +17,3 @@
   };
 
 }
-

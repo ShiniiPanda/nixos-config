@@ -1,57 +1,51 @@
-{  config, lib, pkgs, userSettings, inputs, ... }:
+{ config, lib, pkgs, userSettings, inputs, ... }:
 let
-  super = "SUPER"; 
+  super = "SUPER";
   terminal = "ghostty";
   browser = userSettings.browser;
   launcher = userSettings.launcher;
   fileManager = userSettings.fileManager;
-  hyprland-plugins = inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
-in
-{
+  hyprland-plugins =
+    inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system};
+in {
 
-  imports = [
-    ./waybar.nix
-    ../apps/grimblast.nix
-  ];
+  imports = [ ./waybar.nix ../apps/grimblast.nix ];
 
-  home.packages = with pkgs; [
-    hyprpaper
-  ];
+  home.packages = with pkgs; [ hyprpaper ];
 
   gtk.cursorTheme = {
     package = pkgs.quintom-cursor-theme;
-    name = if (config.stylix.polarity == "light") then "Quintom_Ink" else "Quintom_Snow";
+    name = if (config.stylix.polarity == "light") then
+      "Quintom_Ink"
+    else
+      "Quintom_Snow";
     size = 32;
   };
-  
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    package =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
 
-    plugins = [
-      hyprland-plugins.hyprexpo
-    ];
+    plugins = [ hyprland-plugins.hyprexpo ];
 
     settings = {
 
-      env = [
-        "XCURSOR_SIZE,32"
-        "HYPRCURSOR_SIZE,32"
-      ];
+      env = [ "XCURSOR_SIZE,32" "HYPRCURSOR_SIZE,32" ];
 
       general = {
-        
+
         gaps_in = 5;
         gaps_out = 20;
 
         border_size = 2;
 
-    # Set to true enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false; 
+        # Set to true enable resizing windows by clicking and dragging on borders and gaps
+        resize_on_border = false;
 
-    # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+        # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
 
         layout = "dwindle";
@@ -96,9 +90,7 @@ in
         preserve_split = true;
       };
 
-      master = {
-        new_status = "master";
-      };
+      master = { new_status = "master"; };
 
       # Hyprland wiki misc
       misc = {
@@ -114,17 +106,13 @@ in
         kb_rules = "";
         follow_mouse = 1;
         sensitivity = 0; # From -1.0 to 1.0.
-        touchpad = {
-          natural_scroll = false;
-        };
+        touchpad = { natural_scroll = false; };
       };
 
-      device = [
-        {
-          name = "epic-mouse-v1";
-          sensitivity = -0.5;
-        }
-      ];
+      device = [{
+        name = "epic-mouse-v1";
+        sensitivity = -0.5;
+      }];
 
       bind = [
         "${super}, Q, exec, ${terminal}"
@@ -133,7 +121,7 @@ in
         "${super}, E, exec, ${fileManager}"
         "${super}, V, togglefloating,"
         "${super}, P, pseudo,"
-        "${super}, J, togglesplit," 
+        "${super}, J, togglesplit,"
         "${super}, S, exec, killall rofi || rofi -show drun -show-icons"
         "${super}, B, exec, ${browser}"
 
@@ -157,7 +145,7 @@ in
         "${super}, 8, workspace, 8"
         "${super}, 9, workspace, 9"
         "${super}, 0, workspace, 10"
-        
+
         # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "${super}_SHIFT, 1, movetoworkspace, 1"
         "${super}_SHIFT, 2, movetoworkspace, 2"
@@ -175,13 +163,13 @@ in
         "${super}_SHIFT, S, exec, grimblast --freeze --notify copy area"
         "${super}_SHIFT, semicolon, exec, killall rofi || rofi -modi emoji:rofimoji -show emoji"
         "${super}_SHIFT, E, exec, kitty -e zsh -c 'source ~/.zshrc; lfcd; exec zsh'"
-        "${super}_SHIFT, T, exec, kitty /etc/nixos/themes/change.sh"
+        "${super}_SHIFT, T, exec, kitty /home/panda/nix/themes/change.sh"
         #"${super}_SHIFT, S, exec, flameshot gui -c -p ${screenshotsPath}"
 
         # Example special workspace (scratchpad)
         "${super}, F, togglespecialworkspace, magic"
         "${super}_SHIFT, F, movetoworkspace, special:magic"
-        
+
         # Scroll through existing workspaces with mainMod + scroll
         "${super}, mouse_down, workspace, e+1"
         "${super}, mouse_up, workspace, e-1"
@@ -192,14 +180,14 @@ in
         "${super}, mouse:273, resizewindow"
       ];
 
-      exec-once = [ 
+      exec-once = [
         "hyprpaper"
         "mako"
         "nm-applet"
         "blueman-applet"
         "waybar"
         #"flameshot"
-      ];  
+      ];
     };
 
     extraConfig = ''

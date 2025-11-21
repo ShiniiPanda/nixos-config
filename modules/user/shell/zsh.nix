@@ -12,12 +12,12 @@
     shellAliases = {
       snvim = "sudo -E nvim";
       slgit = "sudo -E lazygit";
-      nixos = "cd /etc/nixos";
-      rebuild = "sudo nixos-rebuild switch --flake '/etc/nixos#default'";
+      nixos = "cd /home/panda/nix";
+      rebuild =
+        "sudo nixos-rebuild switch --flake '/home/panda/nix/profiles/default#default'";
       repos = "cd ~/Documents/Programming/Repos/";
       learning = "cd ~/Documents/Programming/Learning/";
       lf = "lfcd";
-      modules = "cd /etc/nixos/modules";
       lgit = "lazygit";
       ldock = "lazydocker";
       develop = "nix develop -c zsh";
@@ -32,9 +32,7 @@
       }
     '';
 
-    oh-my-zsh = {
-      enable = true;
-    };
+    oh-my-zsh = { enable = true; };
   };
 
 }
