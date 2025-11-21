@@ -2,8 +2,8 @@
   description = "Nixos homelab config flake";
 
   inputs = {
-    nixpkgs.url = "github:NIXOS/nixpkgs/nixos-25.05";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
     stylix.url = "github:danth/stylix";
     ghostty = {
       url = "github:ghostty-org/ghostty";
@@ -18,7 +18,7 @@
       inputs.hyprland.follows = "hyprland";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -46,7 +46,7 @@
         modules = [
           ./hosts/configuration.nix
           # nixos-hardware.nixosModules.asus-rog-strix-g713ie
-          home-manager.nixosModules.default
+          home-manager.nixosModules.home-manager
         ];
       };
     };
