@@ -76,6 +76,31 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    package =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    xwayland.enable = true;
+  };
+
+  environment.sessionVariables = {
+    # Enable if cursor is invisible
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      # extraPackages = with pkgs; [ libvdpau-va-gl ];
+    };
+    # nvidia.modesetting.enable = true;
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
