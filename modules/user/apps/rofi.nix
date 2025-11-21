@@ -1,6 +1,5 @@
 { pkgs, lib, config, ...}:
 let
-  rofi-wayland = pkgs.rofi-wayland;
   inherit (config.lib.formats.rasi) mkLiteral;
   inherit (config.lib.stylix.colors.withHashtag) base00 base05 base01;
 in
@@ -10,7 +9,7 @@ in
   programs.rofi = {
     enable = true;
     cycle = false;
-    package = rofi-wayland;
+    package = pkgs.rofi;
     terminal = "kitty";
     theme = lib.mkForce {
       "*" = {

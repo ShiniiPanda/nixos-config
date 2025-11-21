@@ -1,14 +1,15 @@
 { pkgs, inputs, lib, ...}:
 let
-  spicetifyPkgs = inputs.spicetify-nix.leggacyPackages.${pkgs.stdenv.system};
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in
 {
   programs.spicetify = {
     enable = true;
     enabledExtensions = with spicePkgs.extensions; [
-      keyboardSHortcut
+      keyboardShortcut
     ];
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "macchiatto";
+    # Handled by stylix lmfao..
+    # theme = spicePkgs.themes.catppuccin;
+    # colorScheme = "macchiatto";
   };
 }

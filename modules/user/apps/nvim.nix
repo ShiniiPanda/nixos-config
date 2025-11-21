@@ -4,7 +4,7 @@ let
 		owner = "ShiniiPanda";
 		repo = "AstroNvim-template";
 		rev = "main";
-		sha256 = "sha256-Fu0nUmwl5140RcB6DTAHdLi0W0Z9n/93cM9NRG7IgOM=";
+		sha256 = "sha256-oWTi3ht8HTtCB0LYWQ8Tu83sKAa0LWxoTLx7H/1E+ds";
 	};
 in
 {

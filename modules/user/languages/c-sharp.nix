@@ -1,8 +1,7 @@
 { pkgs, ...}:
 {
-
   home.packages = with pkgs; [
-    dotnetCorePackages.sdk_8_0_1xx
+    dotnetCorePackages.dotnet_9.sdk
     omnisharp-roslyn
   ];
 

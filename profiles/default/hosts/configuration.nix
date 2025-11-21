@@ -5,65 +5,61 @@
 { config, lib, pkgs, inputs, userSettings, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      #<nixos-hardware/asus/rog-strix/g713ie>
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-      ../../modules/system/apps/steam.nix
-      ../../modules/system/apps/spicetify.nix
-      ../../modules/system/apps/droidcam.nix
-      ../../modules/system/hardware/bluetooth.nix
-      ../../modules/system/style/stylix.nix
-      ../../modules/system/hardware/asus-utils.nix
-      ../../modules/system/hardware/docker.nix
-      ../../modules/system/hardware/tablet.nix
-      ../../modules/system/shell/${userSettings.shell}.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    #<nixos-hardware/asus/rog-strix/g713ie>
+    ./hardware-configuration.nix
+    ../../../modules/system/apps/steam.nix
+    ../../../modules/system/apps/spicetify.nix
+    ../../../modules/system/apps/droidcam.nix
+    ../../../modules/system/hardware/bluetooth.nix
+    ../../../modules/system/style/stylix.nix
+    ../../../modules/system/hardware/asus-utils.nix
+    ../../../modules/system/hardware/docker.nix
+    ../../../modules/system/hardware/tablet.nix
+    ../../../modules/system/shell/${userSettings.shell}.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   # boot.loader.systemd-boot.enable = true;
-   boot.loader.efi.canTouchEfiVariables = true;
-  
+  boot.loader.efi.canTouchEfiVariables = true;
 
-   boot.loader.grub = {
-     enable = true;
-     device = "nodev";
-     useOSProber = true;
-     efiSupport = true;
-   };
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    useOSProber = true;
+    efiSupport = true;
+  };
 
-   networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-   networking.firewall.allowedTCPPorts = [ 57621 ];
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
+  networking.firewall.allowedTCPPorts = [ 57621 ];
 
-  
   # Enable flakes and nix shell commands
-   nix.settings = {
-     experimental-features = [ "nix-command" "flakes" ];
-     substituters = ["https://hyprland.cachix.org"];
-     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-   };
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys =
+      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
 
   # Set your time zone.
-   time.timeZone = "Africa/Cairo";
-   time.hardwareClockInLocalTime = true;
+  time.timeZone = "Africa/Cairo";
+  time.hardwareClockInLocalTime = true;
 
   # ALlow unfree packages
-   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Enable Home Manager
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = { 
+    extraSpecialArgs = {
       inherit inputs;
       inherit userSettings;
     };
-    users = {
-      "panda" = import ./home.nix;
-    };
+    users = { "panda" = import ./home.nix; };
     backupFileExtension = "backup";
   };
 
@@ -81,7 +77,6 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
@@ -104,87 +99,88 @@
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
-   security.rtkit.enable = true;
-   services.pipewire = {
-     enable = true;
-     alsa.enable = true;
-     alsa.support32Bit = true;
-     pulse.enable = true;
-     jack.enable = true;
-     wireplumber.enable = true;
-   };
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
-   services.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.panda = {
-     shell = pkgs.${userSettings.shell};
-     isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-     packages = with pkgs; [
-     ];
-   };
+  users.users.panda = {
+    shell = pkgs.${userSettings.shell};
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    packages = with pkgs; [ ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     vim
-     wget
-     git
-     librewolf
-     vesktop
-     waybar # top bar
-     networkmanagerapplet
-     mangohud
-     grim # Taking screenshots
-     slurp # Screenshots area selection
-     gh
-     gcc
-     unzip
-     ripgrep
-     neofetch
-     gnumake
-     wl-clipboard
-     xorg.libXcursor
-     mpv
-     cmake
-     brave
-     nh
-     kdePackages.xwaylandvideobridge
-     killall
-     ( libsForQt5.callPackage ../../modules/system/style/tokyo-night-sddm-theme.nix { } )
-   ];
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    git
+    librewolf
+    waybar # top bar
+    networkmanagerapplet
+    mangohud
+    grim # Taking screenshots
+    slurp # Screenshots area selection
+    gh
+    gcc
+    unzip
+    ripgrep
+    neofetch
+    gnumake
+    wl-clipboard
+    xorg.libXcursor
+    egl-wayland
+    mpv
+    cmake
+    brave
+    nh
+    killall
+    (libsForQt5.qt5.callPackage
+      ../../../modules/system/style/tokyo-night-sddm-theme.nix { })
+  ];
 
-   programs.hyprland = {
-     enable = true;
-     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-     xwayland.enable = true;
-   };
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    package =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    xwayland.enable = true;
+  };
 
-   # File Manager, enabling xfconf to apply preferences.
-   programs.thunar = {
-     enable = true;
+  # File Manager, enabling xfconf to apply preferences.
+  programs.thunar = {
+    enable = true;
     # plugins = with pkgs.xfce; [
     #   thunar-archive-plugin
     #   thunar-volman
     # ];
-   };
-   programs.xfconf.enable = true;
+  };
+  programs.xfconf.enable = true;
 
-   environment.sessionVariables = {
-     # Enable if cursor is invisible
-     #WLR_NO_HARDWARE_CURSORS = "1";
-     NIXOS_OZONE_WL = "1";
-   };
+  environment.sessionVariables = {
+    # Enable if cursor is invisible
+    #WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
 
   hardware = {
     graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = with pkgs; [
-        libvdpau-va-gl
-      ];
+      extraPackages = with pkgs; [ libvdpau-va-gl ];
     };
     nvidia.modesetting.enable = true;
   };
@@ -204,12 +200,11 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Some services for file manager (thunar)
-   services.gvfs.enable = true; # Enabling Mount, Trash and some other things.
-   services.tumbler.enable = true; # Thumbnail support for images.
-
+  services.gvfs.enable = true; # Enabling Mount, Trash and some other things.
+  services.tumbler.enable = true; # Thumbnail support for images.
 
   fonts = {
     packages = with pkgs; [
@@ -251,4 +246,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

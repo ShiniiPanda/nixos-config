@@ -8,9 +8,11 @@
 
   programs.git = {
     enable = true;
-    userName = "Shinii";
-    userEmail = "celisiagaming@gmail.com";
-    extraConfig = {
+    settings = {
+      user = {
+        Name = "Shinii";
+        Email = "celisiagaming@gmail.com";
+      };
       init.defaultBranch = "main";
       safe.directory = "/etc/nixos";
     };
