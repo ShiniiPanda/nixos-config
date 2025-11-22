@@ -2,11 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, inputs, userSettings, ... }:
+{ config, lib, pkgs, inputs, userSettings, pkgs-unstable, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../../modules/system/style/stylix.nix
+    ../../../modules/system/hardware/bluetooth.nix
+    #../../../modules/system/hardware/docker.nix
   ];
 
   # Bootloader.
@@ -47,12 +50,15 @@
     variant = "";
   };
 
+  services.libinput.enable = true;
+
   # Enable Home Manager
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = {
       inherit inputs;
       inherit userSettings;
+      inherit pkgs-unstable;
     };
     users = { "shinii" = import ./home.nix; };
     backupFileExtension = "backup";
@@ -92,6 +98,9 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   hardware = {
     graphics = {
       enable = true;
@@ -108,7 +117,22 @@
     wget
     git
     htop
+    gcc
+    cmake
+    xorg.libXcursor
+    brave
+    wl-clipboard
   ];
+
+  fonts = {
+    packages = with pkgs; [
+      # (nerdfonts.override {
+      #   fonts = [ "Meslo" "FiraMono" ];
+      # })
+      nerd-fonts.meslo-lg
+      nerd-fonts.fira-mono
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -121,7 +145,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+   services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

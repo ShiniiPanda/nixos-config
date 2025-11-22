@@ -4,13 +4,13 @@
 
   imports = [
     ../../../modules/user/hardware/bluetooth.nix
-    #../../../modules/user/apps/nvim.nix
+    ../../../modules/user/apps/nvim.nix
     #../../../modules/user/apps/bitwarden.nix
     #../../../modules/user/apps/utilities.nix
     #../../../modules/user/apps/atlauncher.nix
-    #../../../modules/user/terminal/kitty.nix
+    ../../../modules/user/terminal/kitty.nix
     #../../../modules/user/terminal/ghostty.nix
-    #../../../modules/user/display/hyprland.nix
+    ../../../modules/user/display/hyprland.nix
     #../../../modules/user/apps/jetbrains.nix
     #../../../modules/user/apps/android-studio.nix
     #../../../modules/user/apps/godot.nix
@@ -21,9 +21,9 @@
     #../../../modules/user/shell/mongosh.nix
     ../../../modules/user/shell/direnv.nix
     #../../../modules/user/shell/${userSettings.shell}.nix
-    #../../../modules/user/apps/${userSettings.notification}.nix
-    #../../../modules/user/apps/${userSettings.launcher}.nix
+    ../../../modules/user/apps/${userSettings.notification}.nix
     #../../../modules/user/apps/zathura.nix
+    ../../../modules/user/homelab/apps/rofi.nix
     #../../../modules/user/languages/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
