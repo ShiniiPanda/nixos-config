@@ -109,8 +109,4 @@
   #stylix.targets.neovim.enable = false;
   #stylix.targets.vesktop.enable = false;
 
-  # Enables Packages
-  #lazygit.enable = true;
-  # Homelab specific modifications
-  programs.git.settings.user.Name = "Shinii-Homelab";
 }
