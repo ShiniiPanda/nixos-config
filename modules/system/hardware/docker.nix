@@ -8,9 +8,5 @@
   };
 
   users.users.${userSettings.profile}.extraGroups = [ "docker" ];
-  environment.systemPackages = with pkgs; [
-    docker
-    docker-compose
-    lazydocker
-  ];
+  environment.systemPackages = with pkgs; [ docker docker-compose lazydocker ];
 }

@@ -2,13 +2,13 @@
 
 {
 
-  imports = [ ./lazygit.nix ];
+  imports = [ ../common/git/lazygit.nix ];
 
   programs.git = {
     enable = true;
     settings = {
       user = {
-        Name = "Shinii";
+        Name = lib.mkDefault "Shinii";
         Email = "celisiagaming@gmail.com";
       };
       init.defaultBranch = "main";
@@ -16,4 +16,5 @@
     };
   };
 
+  lazygit.enable = true;
 }

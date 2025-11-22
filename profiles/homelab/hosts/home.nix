@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ../../../modules/user/homelab/git/git.nix
     ../../../modules/user/hardware/bluetooth.nix
     ../../../modules/user/apps/nvim.nix
     #../../../modules/user/apps/bitwarden.nix
@@ -24,6 +25,8 @@
     ../../../modules/user/apps/${userSettings.notification}.nix
     #../../../modules/user/apps/zathura.nix
     ../../../modules/user/homelab/apps/rofi.nix
+    ../../../modules/user/languages/java.nix
+    ../../../modules/user/languages/rust.nix
     #../../../modules/user/languages/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -108,4 +111,6 @@
 
   # Enables Packages
   #lazygit.enable = true;
+  # Homelab specific modifications
+  programs.git.settings.user.Name = "Shinii-Homelab";
 }

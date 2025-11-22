@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
     ../../../modules/system/style/stylix.nix
     ../../../modules/system/hardware/bluetooth.nix
-    #../../../modules/system/hardware/docker.nix
+    ../../../modules/system/hardware/docker.nix
   ];
 
   # Bootloader.
@@ -121,6 +121,7 @@
     cmake
     xorg.libXcursor
     brave
+    unzip
     wl-clipboard
   ];
 
@@ -134,6 +135,11 @@
     ];
   };
 
+  programs.thunar = { enable = true; };
+  # Some services for file manager (thunar)
+  services.gvfs.enable = true; # Enabling Mount, Trash and some other things.
+  services.tumbler.enable = true; # Thumbnail support for images.
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -145,10 +151,10 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 25565 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

@@ -118,6 +118,4 @@
   stylix.targets.neovim.enable = false;
   stylix.targets.vesktop.enable = false;
 
-  # Enables Packages
-  lazygit.enable = true;
 }
