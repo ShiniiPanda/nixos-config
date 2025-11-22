@@ -8,8 +8,7 @@
     enable = true;
     userName = "Shinii-Homelab";
     userEmail = "celisiagaming@gmail.com";
-    init.defaultBranch = "main";
-    safe.directory = "/etc/nixos";
+    extraConfig = { init.defaultBranch = "main"; };
   };
 
   lazygit.enable = true;
