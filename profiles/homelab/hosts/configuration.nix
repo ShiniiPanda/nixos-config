@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
     ../../../modules/system/style/stylix.nix
     ../../../modules/system/hardware/bluetooth.nix
-    ../../../modules/system/hardware/docker.nix
+    ../../../modules/system/homelab/hardware/docker.nix
   ];
 
   # Bootloader.
@@ -123,6 +123,7 @@
     brave
     unzip
     wl-clipboard
+    lm-sensor
   ];
 
   fonts = {
