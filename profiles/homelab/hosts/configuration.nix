@@ -7,6 +7,7 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../../modules/system/homelab/apps/jellyfin.nix
     ../../../modules/system/style/stylix.nix
     ../../../modules/system/hardware/bluetooth.nix
     ../../../modules/system/homelab/hardware/docker.nix
@@ -123,7 +124,7 @@
     brave
     unzip
     wl-clipboard
-    lm-sensor
+    lm_sensors
   ];
 
   fonts = {
