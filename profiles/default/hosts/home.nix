@@ -10,7 +10,7 @@
     ../../../modules/user/apps/nvim.nix
     ../../../modules/user/apps/bitwarden.nix
     ../../../modules/user/apps/utilities.nix
-    ../../../modules/user/apps/atlauncher.nix
+    ../../../modules/user/apps/prism.nix
     ../../../modules/user/terminal/kitty.nix
     ../../../modules/user/terminal/ghostty.nix
     ../../../modules/user/display/hyprland.nix
