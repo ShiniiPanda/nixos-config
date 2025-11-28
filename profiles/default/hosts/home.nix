@@ -10,6 +10,7 @@
     ../../../modules/user/apps/nvim.nix
     ../../../modules/user/apps/bitwarden.nix
     ../../../modules/user/apps/utilities.nix
+    ../../../modules/user/apps/jellyfin-media-player.nix
     ../../../modules/user/apps/prism.nix
     ../../../modules/user/terminal/kitty.nix
     ../../../modules/user/terminal/ghostty.nix
