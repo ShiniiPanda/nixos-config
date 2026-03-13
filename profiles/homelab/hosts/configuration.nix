@@ -8,6 +8,7 @@
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../../modules/system/homelab/apps/jellyfin.nix
+    ../../../modules/system/homelab/apps/caddy.nix
     ../../../modules/system/style/stylix.nix
     ../../../modules/system/hardware/bluetooth.nix
     ../../../modules/system/homelab/hardware/docker.nix
@@ -155,8 +156,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 25565 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
