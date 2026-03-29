@@ -16,5 +16,10 @@
     };
   };
 
+  services.ssh-agent = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   lazygit.enable = true;
 }
