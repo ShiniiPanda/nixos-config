@@ -4,23 +4,25 @@
 
   imports = [
     ../../../modules/user/git/git.nix
+    ../../../modules/user/apps/ssh.nix
     ../../../modules/user/apps/proton.nix
     ../../../modules/user/hardware/bluetooth.nix
+    ../../../modules/user/hardware/ds4.nix
     # ../../../modules/user/apps/lunarvim.nix
     ../../../modules/user/apps/nvim.nix
-    ../../../modules/user/apps/bitwarden.nix
+    #../../../modules/user/apps/bitwarden.nix
     ../../../modules/user/apps/utilities.nix
-    ../../../modules/user/apps/jellyfin-media-player.nix
+    # ../../../modules/user/apps/jellyfin-media-player.nix
     ../../../modules/user/apps/prism.nix
     ../../../modules/user/terminal/kitty.nix
     ../../../modules/user/terminal/ghostty.nix
     ../../../modules/user/display/hyprland.nix
     ../../../modules/user/apps/jetbrains.nix
-    ../../../modules/user/apps/android-studio.nix
+    #../../../modules/user/apps/android-studio.nix
     ../../../modules/user/apps/krita.nix
     ../../../modules/user/apps/vscode.nix
     ../../../modules/user/apps/zoom.nix
-    ../../../modules/user/apps/reaper.nix
+    # ../../../modules/user/apps/reaper.nix
     ../../../modules/user/apps/godot.nix
     ../../../modules/user/apps/osu-lazer.nix
     ../../../modules/user/apps/bruno.nix
@@ -30,6 +32,7 @@
     ../../../modules/user/apps/obsidian.nix
     ../../../modules/user/apps/pavucontrol.nix
     ../../../modules/user/apps/vesktop.nix
+    ../../../modules/user/apps/claude.nix
     ../../../modules/user/shell/mongosh.nix
     ../../../modules/user/shell/direnv.nix
     ../../../modules/user/shell/${userSettings.shell}.nix
