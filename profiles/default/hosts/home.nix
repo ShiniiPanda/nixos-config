@@ -7,7 +7,7 @@
     ../../../modules/user/apps/ssh.nix
     ../../../modules/user/apps/proton.nix
     ../../../modules/user/hardware/bluetooth.nix
-    ../../../modules/user/hardware/ds4.nix
+    # ../../../modules/user/hardware/ds4.nix
     # ../../../modules/user/apps/lunarvim.nix
     ../../../modules/user/apps/nvim.nix
     #../../../modules/user/apps/bitwarden.nix
@@ -19,6 +19,7 @@
     ../../../modules/user/display/hyprland.nix
     ../../../modules/user/apps/jetbrains.nix
     #../../../modules/user/apps/android-studio.nix
+    ../../../modules/user/apps/anki.nix
     ../../../modules/user/apps/krita.nix
     ../../../modules/user/apps/vscode.nix
     ../../../modules/user/apps/zoom.nix
