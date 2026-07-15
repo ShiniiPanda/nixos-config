@@ -1,6 +1,13 @@
 { userSettings, ... }:
 {
 
-  imports = [ ./java.nix ./c-sharp.nix ./node.nix ./c.nix  ./rust.nix ];
+  imports = [
+    ./java.nix
+    ./c-sharp.nix
+    ./node.nix
+    ./c.nix
+    ./rust.nix
+    ./python.nix
+  ];
 
 }
