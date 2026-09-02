@@ -2,13 +2,14 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, userSettings, ... }:
+{ config, lib, pkgs, inputs, userSettings, pkgs-stable, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
     #<nixos-hardware/asus/rog-strix/g713ie>
     ./hardware-configuration.nix
     ../../../modules/system/apps/steam.nix
+    ../../../modules/system/apps/warp.nix
     ../../../modules/system/apps/spicetify.nix
     ../../../modules/system/apps/droidcam.nix
     ../../../modules/system/hardware/bluetooth.nix
@@ -16,6 +17,7 @@
     ../../../modules/system/hardware/asus-utils.nix
     ../../../modules/system/hardware/docker.nix
     ../../../modules/system/hardware/tablet.nix
+    ../../../modules/system/hardware/vm.nix
     ../../../modules/system/shell/${userSettings.shell}.nix
   ];
 
@@ -36,6 +38,7 @@
   networking.networkmanager.enable =
     true; # Easiest to use and most distros use this by default.
   networking.firewall.allowedTCPPorts = [ 57621 ];
+  # networking.firewall.allowedUDPPorts = [ 24454 ];
 
   # Enable flakes and nix shell commands
   nix.settings = {
@@ -50,7 +53,10 @@
   time.hardwareClockInLocalTime = true;
 
   # ALlow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [ "electron-39.8.10" ];
+  };
 
   # Enable Home Manager
   home-manager = {
@@ -58,6 +64,7 @@
     extraSpecialArgs = {
       inherit inputs;
       inherit userSettings;
+      inherit pkgs-stable;
     };
     users = { "panda" = import ./home.nix; };
     backupFileExtension = "backup";
@@ -85,7 +92,11 @@
   # Enable Plasma6 Desktop Environment
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.theme = "tokyo-night-sddm";
+  programs.qylock = {
+    enable = true;
+    theme = "pixel-rainyroom";
+  };
+
   #services.desktopManager.plasma6.enable = true;
   #services.displayManager.defaultSession = "plasma";
 
@@ -126,28 +137,26 @@
     vim
     wget
     git
-    librewolf
     waybar # top bar
     networkmanagerapplet
     mangohud
+    ncdu
     grim # Taking screenshots
     slurp # Screenshots area selection
     gh
     gcc
     unzip
     ripgrep
-    neofetch
+    fastfetch
     gnumake
     wl-clipboard
-    xorg.libXcursor
+    libXcursor
     egl-wayland
     mpv
     cmake
     brave
     nh
     killall
-    (libsForQt5.qt5.callPackage
-      ../../../modules/system/style/tokyo-night-sddm-theme.nix { })
   ];
 
   programs.hyprland = {
@@ -200,7 +209,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Some services for file manager (thunar)
   services.gvfs.enable = true; # Enabling Mount, Trash and some other things.
